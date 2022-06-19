@@ -14,17 +14,24 @@ import "@openzeppelin/contracts/security/Pausable.sol";
  * event of a large bug.
  */
  contract ERC20Pausable is ERC20, Pausable {
-    /**
-     * @dev See {ERC20-_beforeTokenTransfer}.
-     *
-     * Requirements:
-     *
-     * - the contract must not be paused.
-     */
-
+    
+     address owner;
      constructor () ERC20("ERC20Pause","ERC20"){
-
+   
      }
+
+     modifier onlyOwner() {
+    require(msg.sender == owner);
+    _;
+  }
+     function pause() external virtual  onlyOwner returns (bool) {
+        return _pause;
+    }
+
+    function unpause() external virtual onlyOwner returns (bool) {
+        return _unpause;
+    }
+
 
     function _beforeTokenTransfer(
         address from,
