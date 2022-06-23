@@ -17,7 +17,7 @@ import "@openzeppelin/contracts/security/Pausable.sol";
     
      address owner;
      constructor () ERC20("ERC20Pause","ERC20"){
-   
+      owner = msg.sender;
      }
 
      modifier onlyOwner() {
