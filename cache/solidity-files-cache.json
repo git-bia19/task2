@@ -260,8 +260,8 @@
       ]
     },
     "C:\\hardhat\\hardhat-tutorial\\contracts\\ERC20pausable.sol": {
-      "lastModificationDate": 1655479982511,
-      "contentHash": "0d259ffef51df9af5940782e3d87efc8",
+      "lastModificationDate": 1655665116452,
+      "contentHash": "7952a5605fa9c148abee14c20547f40f",
       "sourceName": "contracts/ERC20pausable.sol",
       "solcConfig": {
         "version": "0.8.0",

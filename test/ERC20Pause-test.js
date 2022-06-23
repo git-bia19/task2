@@ -30,9 +30,20 @@ describe("Token Unit tests for ERC20 Pausable", () => {
   describe("#pause ", () => {
     it("pause contract", async () => {
       
-        const pause = await token.connect(user).pause()
-        expect(pause).to.equal(true);
-        console.log(pause)
+        const val = await token.connect(owner).paused()
+        expect(val).to.equal(false);
+        console.log(val)
+
+
+      });
+    });
+describe("#unpause ", () => {
+    it("unpause contract", async () => {
+      
+        await token.connect(owner).unpause()
+        expect(await token.paused()).to.equal(true);
+
+        
       });
 
     });

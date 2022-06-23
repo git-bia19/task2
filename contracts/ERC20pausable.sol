@@ -24,12 +24,12 @@ import "@openzeppelin/contracts/security/Pausable.sol";
     require(msg.sender == owner);
     _;
   }
-     function pause() external  onlyOwner returns (bool) {
-        return _pause;
+     function pause() external  onlyOwner {
+         _pause();
     }
 
-    function unpause() external  onlyOwner returns (bool) {
-        return _unpause;
+    function unpause() external  onlyOwner {
+         _unpause();
     }
 
 
